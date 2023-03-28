@@ -1,0 +1,9 @@
+<% if (page.posts) { %>
+  <ul>
+    <% page.posts.each(function(post){ %>
+      <li><a href="<%= url_for(post.path) %>"><span class="post-title gt-c-content-color-first"><%= post.slug && post.slug.replace(/^(.*)\//, '').replace(/\..*$/, '') || "(无标题)" %></span></a></li>
+    <% }); %>
+  </ul>
+<% } else { %>
+  <p>No results found for <%= page.query %>.</p>
+<% } %>
